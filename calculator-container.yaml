@@ -1,0 +1,108 @@
+swagger: "2.0"
+info:
+  title: Calculator Container API
+  description: API for a simple calculator
+  version: 1.0.0
+
+host: calculator-container.apigateway.involuted-alpha-415222.cloud.goog
+basePath: /
+schemes:
+  - https
+  - http
+
+paths:
+  /add:
+    post:
+      operationId: add
+      summary: Add two numbers.
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: Numbers to add
+          required: true
+          schema:
+            type: object
+            properties:
+              X:
+                type: number
+              Y:
+                type: number
+      responses:
+        200:
+          description: OK
+      x-google-backend:
+        address: https://add-bmhpeqtpxa-uc.a.run.app/add
+
+  /sub:
+    post:
+      operationId: sub
+      summary: Subtract two numbers.
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: Numbers to subtract
+          required: true
+          schema:
+            type: object
+            properties:
+              X:
+                type: number
+              Y:
+                type: number
+      responses:
+        200:
+          description: OK
+      x-google-backend:
+        address: https://sub-bmhpeqtpxa-uc.a.run.app/sub
+
+  /mul:
+    post:
+      operationId: mul
+      summary: Multiply two numbers.
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: Numbers to multiply
+          required: true
+          schema:
+            type: object
+            properties:
+              X:
+                type: number
+              Y:
+                type: number
+      responses:
+        200:
+          description: OK
+      x-google-backend:
+        address: https://mul-bmhpeqtpxa-uc.a.run.app/mul
+
+  /div:
+    post:
+      operationId: div
+      summary: Divide two numbers.
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: Numbers to divide
+          required: true
+          schema:
+            type: object
+            properties:
+              X:
+                type: number
+              Y:
+                type: number
+      responses:
+        200:
+          description: OK
+      x-google-backend:
+        address: https://div-bmhpeqtpxa-uc.a.run.app/div
